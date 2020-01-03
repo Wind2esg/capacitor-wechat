@@ -13,6 +13,9 @@ export class WechatWeb extends WebPlugin implements WechatPlugin {
     console.log('ECHO', options);
     return options;
   }
+
+  registerWx(){}
+  sendToWx(){}
 }
 
 const Wechat = new WechatWeb();
