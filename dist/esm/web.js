@@ -21,6 +21,8 @@ export class WechatWeb extends WebPlugin {
             return options;
         });
     }
+    registerWx() { }
+    sendToWx() { }
 }
 const Wechat = new WechatWeb();
 export { Wechat };

@@ -19,8 +19,8 @@ public class Wechat extends Plugin {
     public void echo(PluginCall call) {
         String value = call.getString("value");
         JSObject ret = new JSObject();
-        ret.put("value", value);
-        call.success(ret);
+        ret.put("value", "bbbbbbbbbb");
+        call.resolve(ret);
     }
 
     @PluginMethod()
