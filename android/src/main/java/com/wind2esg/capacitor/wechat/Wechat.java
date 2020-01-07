@@ -12,17 +12,16 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
+import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-
-import org.json.JSONObject;
 
 @NativePlugin(
     requestCodes = {Wechat.REQUEST_UNIONID}
 )
 public class Wechat extends Plugin {
-    public static final String APP_ID = "<your appid>"; 
-    public static final String APP_SECRET = "<your appsecret>";
+    public static final String APP_ID = "YOUR_APP_ID";
+    public static final String APP_SECRET = "YOUR_APP_SECRET";
 
     protected static final int REQUEST_UNIONID = 60001;
     public static final int AUTH = 99;
@@ -58,6 +57,7 @@ public class Wechat extends Plugin {
         req.state = "capacitor";
         saveCall(call);
         WXEntryActivity.setHandlerAuth(getHandler());
+        api = WXAPIFactory.createWXAPI(getContext(), Wechat.APP_ID, true);
         api.sendReq(req);
         Log.i(this.TAG, "send auth request to wechat");
     }
@@ -86,19 +86,20 @@ public class Wechat extends Plugin {
                 public void handleMessage(Message msg) {
                     int tag = msg.what;
                     switch (tag) {
-                        case Pay: {
+                        case Wechat.PAY:
+                        case Wechat.AUTH: {
                             Bundle data = msg.getData();
                             try{
-                                Log.i(this.TAG, data.getString("result"));
+                                Log.i(TAG, data.getString("result"));
                                 JSObject json = new JSObject(data.getString("result"));
                                 PluginCall savedCall = getSavedCall();
                                 if(savedCall == null){
-                                    Log.i(this.TAG, "no savedCall");
+                                    Log.i(TAG, "no savedCall");
                                     return;
                                 }
                                 savedCall.resolve(json);
                             }catch(Exception e){
-                                Log.e(this.TAG, e.getMessage());
+                                Log.e(TAG, e.getMessage());
                             }
     
                         }

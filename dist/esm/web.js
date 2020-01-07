@@ -24,6 +24,7 @@ export class WechatWeb extends WebPlugin {
     registerWx() { }
     authLogin() { }
     pay(payParams) {
+        console.log(payParams);
         return new Promise(() => "");
     }
 }
