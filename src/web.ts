@@ -15,7 +15,18 @@ export class WechatWeb extends WebPlugin implements WechatPlugin {
   }
 
   registerWx(){}
-  sendToWx(){}
+  authLogin(){}
+  pay(payParams: {
+    appid: string,
+    noncestr: string,
+    package: string,
+    partnerid: string,
+    prepayid: string,
+    sign: string,
+    timestamp: string
+  }): Promise<{value: string}>{
+    return new Promise(()=>"")
+  }
 }
 
 const Wechat = new WechatWeb();
