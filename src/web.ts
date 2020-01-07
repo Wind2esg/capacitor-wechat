@@ -25,6 +25,7 @@ export class WechatWeb extends WebPlugin implements WechatPlugin {
     sign: string,
     timestamp: string
   }): Promise<{value: string}>{
+    console.log(payParams);
     return new Promise(()=>"")
   }
 }

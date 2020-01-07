@@ -22,7 +22,10 @@ export class WechatWeb extends WebPlugin {
         });
     }
     registerWx() { }
-    sendToWx() { }
+    authLogin() { }
+    pay(payParams) {
+        return new Promise(() => "");
+    }
 }
 const Wechat = new WechatWeb();
 export { Wechat };

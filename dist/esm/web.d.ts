@@ -8,7 +8,18 @@ export declare class WechatWeb extends WebPlugin implements WechatPlugin {
         value: string;
     }>;
     registerWx(): void;
-    sendToWx(): void;
+    authLogin(): void;
+    pay(payParams: {
+        appid: string;
+        noncestr: string;
+        package: string;
+        partnerid: string;
+        prepayid: string;
+        sign: string;
+        timestamp: string;
+    }): Promise<{
+        value: string;
+    }>;
 }
 declare const Wechat: WechatWeb;
 export { Wechat };
