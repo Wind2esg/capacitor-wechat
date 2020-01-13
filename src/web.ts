@@ -24,9 +24,10 @@ export class WechatWeb extends WebPlugin implements WechatPlugin {
     prepayid: string,
     sign: string,
     timestamp: string
-  }): Promise<{value: string}>{
+  }): Promise<{payResult: string}>{
     console.log(payParams);
-    return new Promise(()=>"")
+    //for web send request to api to get qr code then scan
+    return new Promise(()=>({payResult:"0"}))
   }
 }
 

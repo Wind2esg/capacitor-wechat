@@ -8,4 +8,41 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="28" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+        <activity
+            android:name="com.wind2esg.capacitor.wechat.WXEntryActivity"
+            android:exported="true"
+            android:label="WXEntryActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.YOUR_PACKAGE_NAME"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <activity-alias
+            android:name="com.YOUR_PACKAGE_NAME.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.wind2esg.capacitor.wechat.WXEntryActivity" >
+        </activity-alias>
+
+        <activity
+            android:name="com.wind2esg.capacitor.wechat.WXPayEntryActivity"
+            android:exported="true"
+            android:label="WXPayEntryActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.YOUR_PACKAGE_NAME"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <activity-alias
+            android:name="com.YOUR_PACKAGE_NAME.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.wind2esg.capacitor.wechat.WXPayEntryActivity" >
+        </activity-alias>
+    </application>
+
 </manifest>

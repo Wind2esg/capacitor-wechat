@@ -16,5 +16,5 @@ export interface WechatPlugin {
     prepayid: string,
     sign: string,
     timestamp: string
-  }): Promise<{value: string}>;
+  }): Promise<{payResult: string}>;
 }

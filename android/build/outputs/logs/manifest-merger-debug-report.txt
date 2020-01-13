@@ -1,37 +1,99 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
 	package
-		ADDED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:3:7-62
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:3:7-62
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-		ADDED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-		ADDED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-4:14
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:3-43:14
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml:2:13-71
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:2:13-71
+uses-permission#android.permission.INTERNET
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:6:5-75
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:6:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:7:5-74
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:7:22-72
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:8:5-78
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:8:22-76
+application
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:10:5-41:19
+activity#com.wind2esg.capacitor.wechat.WXEntryActivity
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:11:7-18:18
+	android:label
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:13:11-42
+	android:launchMode
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:17:11-42
+	android:exported
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:15:11-34
+	android:theme
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:14:11-70
+	android:taskAffinity
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:16:11-55
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:12:11-71
+activity-alias#com.YOUR_PACKAGE_NAME.wxapi.WXEntryActivity
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:20:7-24:24
+	android:exported
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:22:11-34
+	android:targetActivity
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:23:11-81
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:21:11-69
+activity#com.wind2esg.capacitor.wechat.WXPayEntryActivity
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:26:7-33:18
+	android:label
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:28:11-45
+	android:launchMode
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:32:11-42
+	android:exported
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:30:11-34
+	android:theme
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:29:11-70
+	android:taskAffinity
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:31:11-55
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:27:11-74
+activity-alias#com.YOUR_PACKAGE_NAME.wxapi.WXPayEntryActivity
+ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:35:7-39:24
+	android:exported
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:37:11-34
+	android:targetActivity
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:38:11-84
+	android:name
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml:36:11-72
 uses-sdk
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-		ADDED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-		ADDED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
-		INJECTED from D:\myOpensource\capacitor-wechat\capacitor-wechat\android\src\main\AndroidManifest.xml
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+		ADDED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
+		INJECTED from D:\myOpensource\capacitor-wechat\android\src\main\AndroidManifest.xml
