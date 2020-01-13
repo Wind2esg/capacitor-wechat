@@ -80,6 +80,7 @@ public class Wechat extends Plugin {
         Log.i(this.TAG, "send pay request to wechat");
     } 
 
+    @SuppressLint("HandlerLeak")
     protected Handler getHandler(){
         if(handler == null){
             return new Handler() {

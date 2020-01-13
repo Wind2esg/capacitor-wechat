@@ -25,7 +25,8 @@ export class WechatWeb extends WebPlugin {
     authLogin() { }
     pay(payParams) {
         console.log(payParams);
-        return new Promise(() => "");
+        //for web send request to api to get qr code then scan
+        return new Promise(() => ({ payResult: "0" }));
     }
 }
 const Wechat = new WechatWeb();

@@ -20,6 +20,6 @@ export interface WechatPlugin {
         sign: string;
         timestamp: string;
     }): Promise<{
-        value: string;
+        payResult: string;
     }>;
 }
