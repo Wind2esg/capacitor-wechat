@@ -15,5 +15,5 @@ cache:
     - $HOME/android/.android/build-cache
 
 script:
-  - cd $HOME/android - gradle build
+  - $HOME/android/gradlew build
   
