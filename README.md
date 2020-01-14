@@ -39,9 +39,14 @@ For more infomation, plz refer to [wechat official wiki](https://developers.weix
 TBD  
 
 ## API
-`registerWx()` register to wechat  
-`authLoginRemote({authUrl: <your api>})` auth login with your remote api  
-`authLogin()` auth login
+| call | param | return | 
+| -| - | - | - |
+|`registerWx()`|  |  | 
+|`pay()`| {appid: "appid", partnerid: "partnerid", prepayid: "prepayid", package: "package", noncestr: "noncestr", timestamp: "timestamp", sign: "sign"} | {payResult: "payResultCode"}| 
+|`authLoginRemote()`| {authUrl: "authUrl"} | {openid: "openid", nickname: "nickname", sex: "sex", province: "province", city: "city", country: "country", headimgurl: "headimgurl", privilege: "privilege", unionid: "unionid", openid: "openid", code: "code"} | 
+|`authLogin()`| {authInfo: "authInfo"} | {openid: "openid", nickname: "nickname", sex: "sex", province: "province", city: "city", country: "country", headimgurl: "headimgurl", privilege: "privilege", unionid: "unionid", openid: "openid", code: "code"}| 
+
++ For more infomation, plz refer to [wechat official wiki](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
 
 ## Related link
 [capacitor 支付宝插件](https://github.com/Wind2esg/capacitor-alipay)  
