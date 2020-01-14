@@ -47,12 +47,14 @@ TBD
   + return: `{ payResult: string }`
 + `authLoginRemote`
   + param: `{ authUrl: string }`
-  + return: `{openid: string, nickname: string, sex: string, province: string, city: string, country: string, headimgurl: string, privilege: string, unionid: string, openid: string, code: string}`
+  + return: `{openid: string, nickname: string, sex: string, province: string, city: string, country: string, headimgurl: string, privilege: string, unionid: string, code: string}`
 + `authLogin`
   + param:
   + return: same as `authLoginRemote`
-  
-For more infomation, plz refer to [wechat official wiki](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
+
+> `authLoginRemote` and `authLogin`, here offer extra data `code`.  
+
+> For more infomation, plz refer to [wechat official wiki](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
 
 ## Related link
 [capacitor 支付宝插件](https://github.com/Wind2esg/capacitor-alipay)  
