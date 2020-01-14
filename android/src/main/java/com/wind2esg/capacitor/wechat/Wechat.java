@@ -1,5 +1,6 @@
 package com.wind2esg.capacitor.wechat;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,19 +17,18 @@ import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
-@NativePlugin(
-    requestCodes = {Wechat.REQUEST_UNIONID}
-)
+@NativePlugin()
 public class Wechat extends Plugin {
     public static final String APP_ID = "YOUR_APP_ID";
-    public static final String APP_SECRET = "YOUR_APP_SECRET";
+    public static final String APP_SECRET = "YOUR_APP_SECRET"; // you need to fill this if u dont use authLoginRemote.
 
-    protected static final int REQUEST_UNIONID = 60001;
     public static final int AUTH = 99;
     public static final int PAY = 98;
     public static final String PAY_GOOD = "0";
     public static final String PAY_BAD = "-1";
     public static final String PAY_CANCEL = "-2";
+
+    public static String AUTH_URL = "";
 
     private IWXAPI api;
 
@@ -52,14 +52,28 @@ public class Wechat extends Plugin {
 
     @PluginMethod()
     public void authLogin(PluginCall call) {
+        AUTH_URL = "";
         final SendAuth.Req req = new SendAuth.Req();
         req.scope = "snsapi_userinfo";
-        req.state = "capacitor";
+        req.state = "capacitor-wechat";
         saveCall(call);
         WXEntryActivity.setHandlerAuth(getHandler());
         api = WXAPIFactory.createWXAPI(getContext(), Wechat.APP_ID, true);
         api.sendReq(req);
         Log.i(this.TAG, "send auth request to wechat");
+    }
+
+    @PluginMethod()
+    public void authLoginRemote(PluginCall call) {
+        AUTH_URL = call.getString("authUrl");
+        final SendAuth.Req req = new SendAuth.Req();
+        req.scope = "snsapi_userinfo";
+        req.state = "capacitor-wechat";
+        saveCall(call);
+        WXEntryActivity.setHandlerAuth(getHandler());
+        api = WXAPIFactory.createWXAPI(getContext(), Wechat.APP_ID, true);
+        api.sendReq(req);
+        Log.i(this.TAG, "send remote auth request to wechat");
     }
 
     @PluginMethod()

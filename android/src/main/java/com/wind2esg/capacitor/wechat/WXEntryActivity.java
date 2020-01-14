@@ -99,7 +99,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
                                     "access_token=%s&openid=%s", accessToken, openId), NetworkUtil.GET_INFO);
                         } else {
                             NetworkUtil.sendWxAPI(handler, String.format("https://api.weixin.qq.com/sns/oauth2/refresh_token?" +
-                                            "appid=%s&grant_type=refresh_token&refresh_token=%s", "wxd930ea5d5a258f4f", refreshToken),
+                                            "appid=%s&grant_type=refresh_token&refresh_token=%s", Wechat.APP_ID, refreshToken),
                                     NetworkUtil.REFRESH_TOKEN);
                         }
                     } catch (JSONException e) {
@@ -230,36 +230,36 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 
 //        Toast.makeText(this, getString(result) + ", type=" + resp.getType(), Toast.LENGTH_SHORT).show();
 
-        if (resp.getType() == ConstantsAPI.COMMAND_SUBSCRIBE_MESSAGE) {
-            SubscribeMessage.Resp subscribeMsgResp = (SubscribeMessage.Resp) resp;
-            String text = String.format("openid=%s\ntemplate_id=%s\nscene=%d\naction=%s\nreserved=%s",
-                    subscribeMsgResp.openId, subscribeMsgResp.templateID, subscribeMsgResp.scene, subscribeMsgResp.action, subscribeMsgResp.reserved);
+        // if (resp.getType() == ConstantsAPI.COMMAND_SUBSCRIBE_MESSAGE) {
+        //     SubscribeMessage.Resp subscribeMsgResp = (SubscribeMessage.Resp) resp;
+        //     String text = String.format("openid=%s\ntemplate_id=%s\nscene=%d\naction=%s\nreserved=%s",
+        //             subscribeMsgResp.openId, subscribeMsgResp.templateID, subscribeMsgResp.scene, subscribeMsgResp.action, subscribeMsgResp.reserved);
 
-            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
-        }
+        //     Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        // }
 
-        if (resp.getType() == ConstantsAPI.COMMAND_LAUNCH_WX_MINIPROGRAM) {
-            WXLaunchMiniProgram.Resp launchMiniProgramResp = (WXLaunchMiniProgram.Resp) resp;
-            String text = String.format("openid=%s\nextMsg=%s\nerrStr=%s",
-                    launchMiniProgramResp.openId, launchMiniProgramResp.extMsg,launchMiniProgramResp.errStr);
+        // if (resp.getType() == ConstantsAPI.COMMAND_LAUNCH_WX_MINIPROGRAM) {
+        //     WXLaunchMiniProgram.Resp launchMiniProgramResp = (WXLaunchMiniProgram.Resp) resp;
+        //     String text = String.format("openid=%s\nextMsg=%s\nerrStr=%s",
+        //             launchMiniProgramResp.openId, launchMiniProgramResp.extMsg,launchMiniProgramResp.errStr);
 
-            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
-        }
+        //     Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        // }
 
-        if (resp.getType() == ConstantsAPI.COMMAND_OPEN_BUSINESS_VIEW) {
-            WXOpenBusinessView.Resp launchMiniProgramResp = (WXOpenBusinessView.Resp) resp;
-            String text = String.format("openid=%s\nextMsg=%s\nerrStr=%s\nbusinessType=%s",
-                    launchMiniProgramResp.openId, launchMiniProgramResp.extMsg,launchMiniProgramResp.errStr,launchMiniProgramResp.businessType);
+        // if (resp.getType() == ConstantsAPI.COMMAND_OPEN_BUSINESS_VIEW) {
+        //     WXOpenBusinessView.Resp launchMiniProgramResp = (WXOpenBusinessView.Resp) resp;
+        //     String text = String.format("openid=%s\nextMsg=%s\nerrStr=%s\nbusinessType=%s",
+        //             launchMiniProgramResp.openId, launchMiniProgramResp.extMsg,launchMiniProgramResp.errStr,launchMiniProgramResp.businessType);
 
-            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
-        }
+        //     Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        // }
 
-        if (resp.getType() == ConstantsAPI.COMMAND_OPEN_BUSINESS_WEBVIEW) {
-            WXOpenBusinessWebview.Resp response = (WXOpenBusinessWebview.Resp) resp;
-            String text = String.format("businessType=%d\nresultInfo=%s\nret=%d",response.businessType,response.resultInfo,response.errCode);
+        // if (resp.getType() == ConstantsAPI.COMMAND_OPEN_BUSINESS_WEBVIEW) {
+        //     WXOpenBusinessWebview.Resp response = (WXOpenBusinessWebview.Resp) resp;
+        //     String text = String.format("businessType=%d\nresultInfo=%s\nret=%d",response.businessType,response.resultInfo,response.errCode);
 
-            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
-        }
+        //     Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        // }
 
         if (resp.getType() == ConstantsAPI.COMMAND_SENDAUTH) {
             SendAuth.Resp authResp = (SendAuth.Resp)resp;
@@ -267,9 +267,21 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
             code = authResp.code;//here we need the code
 
 //            Toast.makeText(this, "code=" + authResp.code, Toast.LENGTH_SHORT).show();
-            NetworkUtil.sendWxAPI(handler, String.format("https://api.weixin.qq.com/sns/oauth2/access_token?" +
-                            "appid=%s&secret=%s&code=%s&grant_type=authorization_code", Wechat.APP_ID,
-                    Wechat.APP_SECRET, authResp.code), NetworkUtil.GET_TOKEN);
+            if(Wechat.AUTH_URL == ""){
+                //authLogin
+                NetworkUtil.sendWxAPI(
+                    handler, 
+                    String.format("https://api.weixin.qq.com/sns/oauth2/access_token?" + "appid=%s&secret=%s&code=%s&grant_type=authorization_code", Wechat.APP_ID, Wechat.APP_SECRET, authResp.code), 
+                    NetworkUtil.GET_TOKEN
+                );
+            }else{
+                //authLoginRemote
+                NetworkUtil.sendWxAPI(
+                    handler, 
+                    Wechat.AUTH_URL,
+                    NetworkUtil.GET_INFO
+                );
+            }
         }
         finish();
     }

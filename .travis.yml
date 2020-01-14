@@ -1,0 +1,19 @@
+language: android
+dist: trusty
+android:
+  components:
+    - build-tools-26.1.1
+    - android-28
+    - extra
+before_cache:
+  - rm -f  $HOME/android/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/android/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/android/.gradle/caches/
+    - $HOME/android/.gradle/wrapper/
+    - $HOME/android/.android/build-cache
+
+script:
+  - cd $HOME/android
+  - gradle build
