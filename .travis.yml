@@ -15,7 +15,4 @@ cache:
     - $HOME/.android/build-cache
 
 script:
-  - pwd
-  - ls
-  - ls ../
-  - sudo ./android/gradlew build
+  - gradle -b android/build.gradle build
