@@ -39,14 +39,20 @@ For more infomation, plz refer to [wechat official wiki](https://developers.weix
 TBD  
 
 ## API
-| call | param | return | 
-| -| - | - | - |
-|`registerWx()`|  |  | 
-|`pay()`| {appid: "appid", partnerid: "partnerid", prepayid: "prepayid", package: "package", noncestr: "noncestr", timestamp: "timestamp", sign: "sign"} | {payResult: "payResultCode"}| 
-|`authLoginRemote()`| {authUrl: "authUrl"} | {openid: "openid", nickname: "nickname", sex: "sex", province: "province", city: "city", country: "country", headimgurl: "headimgurl", privilege: "privilege", unionid: "unionid", openid: "openid", code: "code"} | 
-|`authLogin()`| {authInfo: "authInfo"} | {openid: "openid", nickname: "nickname", sex: "sex", province: "province", city: "city", country: "country", headimgurl: "headimgurl", privilege: "privilege", unionid: "unionid", openid: "openid", code: "code"}| 
-
-+ For more infomation, plz refer to [wechat official wiki](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
++ `registerWx`
+  + param:
+  + return: 
++ `pay`
+  + param: `{ appid: string, partnerid: string, prepayid: string, package: string, noncestr: string, timestamp: string, sign: string }`
+  + return: `{ payResult: string }`
++ `authLoginRemote`
+  + param: `{ authUrl: string }`
+  + return: `{openid: string, nickname: string, sex: string, province: string, city: string, country: string, headimgurl: string, privilege: string, unionid: string, openid: string, code: string}`
++ `authLogin`
+  + param:
+  + return: same as `authLoginRemote`
+  
+For more infomation, plz refer to [wechat official wiki](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
 
 ## Related link
 [capacitor 支付宝插件](https://github.com/Wind2esg/capacitor-alipay)  
