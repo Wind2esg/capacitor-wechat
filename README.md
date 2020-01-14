@@ -22,9 +22,7 @@ Then fill your appid in `APP_ID`.
 As official recommended, you better store your appsecret on server and offer api, just ignore `APP_SECRET` and use method `authLoginRemote`. Your api must return data as `https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID`  
 Or you can use `authLogin`, then fill your appsecret in `APP_SECRET`.
 
-For more infomation, plz refer to [wechat official wiki](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
-
-
+编辑原生代码。
 + `npx cap open android` 打开 IDE。  
 
 + 找到 `app` 模块，找到你包名下的 `ainActivity.java`，添加 `add(Wechat.class);`。  
@@ -32,6 +30,13 @@ For more infomation, plz refer to [wechat official wiki](https://developers.weix
 将你的 appid 填入 `APP_ID`。  
 官方推荐将 appsecret 存储到服务端，并提供 api。如果使用此类方式，忽略 `APP_SECRET` 并且调用 `authLoginRemote` 方法。api 的返回应该与 `https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID` 一致。  
 或者调用 `authLogin`，那么需要将 appsecret 填入 `APP_SECRET`。  
+
+For more infomation, plz refer to [wechat official wiki](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
+
+更多详情 [官方文档](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)  
+
+### IOS  
+TBD  
 
 ## API
 `registerWx()` register to wechat  
