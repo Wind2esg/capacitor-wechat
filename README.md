@@ -17,6 +17,8 @@ Edit native code.
 
 + Find module `app`, open `<your package>/MainActivity.java`, add `add(Wechat.class);`.
 
++ Find module `capacitor-wechat`, open `AndroidManifest.xml`, change `YOUR_PACKAGE_NAME` to your package name, as `appid` in your `capacitor.config.json`.
+  
 + Find module `capacitor-wechat`, open `com.wind2esg.capacitor.wechat/Wechat.java`.
 Then fill your appid in `APP_ID`.  
 As official recommended, you better store your appsecret on server and offer api, just ignore `APP_SECRET` and use method `authLoginRemote`. Your api must return data as `https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID`  
@@ -25,7 +27,8 @@ Or you can use `authLogin`, then fill your appsecret in `APP_SECRET`.
 编辑原生代码。
 + `npx cap open android` 打开 IDE。  
 
-+ 找到 `app` 模块，找到你包名下的 `ainActivity.java`，添加 `add(Wechat.class);`。  
++ 找到 `app` 模块，找到你包名下的 `MainActivity.java`，添加 `add(Wechat.class);`。  
++ 找到 `capacitor-wechat` 模块， 打开 `AndroidManifest.xml`，将 `YOUR_PACKAGE_NAME` 替换为你的包名，也就是 `capacitor.config.json` 中的 `appid`. 
 + 找到 `capacitor-wechat` 模块下 `com.wind2esg.capacitor.wechat/Wechat.java` 文件。
 将你的 appid 填入 `APP_ID`。  
 官方推荐将 appsecret 存储到服务端，并提供 api。如果使用此类方式，忽略 `APP_SECRET` 并且调用 `authLoginRemote` 方法。api 的返回应该与 `https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID` 一致。  
